@@ -1,0 +1,17 @@
+Instruction for SWATHtoMRM
+
+2017/12/17
+
+1. To process SWATH data with SWATHtoMRM, the data (in .mzXML format, converted by MSConvert software in ProteoWizard) should be placed into a folder and send the path of the folder to SWATHtoMRM.
+2. The SWATH window setup should be recorded in a .csv file named "SWATHsetup.csv" with two columns called "begin" and "end", indicating begin and end of eah SWATH window, respectively. The .csv file should be placed outside the data folder. Please note that the file name and column names are case sensitive.
+3. Download and install R software from https://cran.r-project.org/.
+4. Install the following depended R packages:
+	CRAN package: Rcpp (v0.12.14 or higher)
+	Boiconductor packages: xcms, CAMERA, BiocParallel (xcms v1.51.0 or higher)
+	Please note that if you want to exactly re-generate our result, please install xcms v1.46.0 (https://bioconductor.org/packages/3.2/bioc/html/xcms.html) with dependences.
+5. Install SWATHtoMRM packages from local file. Here we provide two versions, the binary package (.zip) is compiled package for windows OS and the source package (.tar.gz) is packaged for all OS. If you want to install the source package on Windows platform, please install Rtools first.
+6. Process SWATH data with SWATHtoMRM. Demo code can be found in file "demo code.txt".
+7. The final results are stored in the "Result" folder. For multiple times processing, the final results are stored in "Result.x". 3 reports in .csv format can be found in the result folder:
+	"MRMTransition.csv" contains the final MRM transitions for the processed SWATH data.
+	"result_origin.csv" records the pseudo MS/MS spectrum for each feature from each sample.
+	"result.csv" is the consensus MS/MS library for all features from all samples.
